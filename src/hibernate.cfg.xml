@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<!--
+    * Bu dosya default olarak her hibernate eklenen projede olmasi gerekmektedir.
+    * Eger sifirdan proje olusturmak isterseniz : bu dosyayi proje dosyaniz icine eklemeniz gerekmektedir.
+    * <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+            "external librariese kutuphanenin eklenmesi gerekmektedir yoksa hata alirsiniz."
+    * Turkiye saati hatasi almamak icin:
+            ?useSSL=false&amp;useLegacyDateTimeCode=false&amp;serverTimezone=Turkey satirini veritabani ismimizden sonra ekliyoruz.
+    * <property name="hibernate.connection.username">root</property>
+             MsSQL kullanici adiniz
+    * <property name="hibernate.connection.password"></property>
+            MsSQL sifreniz
+
+ -->
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/world?useSSL=false&amp;useLegacyDateTimeCode=false&amp;serverTimezone=Turkey</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">1234</property>
+        <property name="hibernate.connection.pool_size">1</property>
+        <property name="hibernate.current_session_context_class">thread</property>
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    </session-factory>
+</hibernate-configuration>
+
